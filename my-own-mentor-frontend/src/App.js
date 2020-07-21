@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import FetchFunction from "./utils/FetchFunction";
+import UserContextProvider from "./user/UserContextProvider";
 
 
 
@@ -10,11 +11,9 @@ import FetchFunction from "./utils/FetchFunction";
 function App() {
 
   return (
-    <div className="App">
+  <UserContextProvider>
 
-        <FetchFunction />
-
-    </div>
+  </UserContextProvider>
   );
 }
 

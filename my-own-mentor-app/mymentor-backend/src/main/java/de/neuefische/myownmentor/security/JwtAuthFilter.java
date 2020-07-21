@@ -19,11 +19,11 @@ import java.util.Optional;
 @Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final de.neuefische.projectplanning.security.JwtUtils jwtUtils;
+    private final JWTUtils jwtUtils;
     private final MongoDbUserDetailsService detailsService;
 
     @Autowired
-    public JwtAuthFilter(de.neuefische.projectplanning.security.JwtUtils jwtUtils, MongoDbUserDetailsService detailsService) {
+    public JwtAuthFilter(JWTUtils jwtUtils, MongoDbUserDetailsService detailsService) {
         this.jwtUtils = jwtUtils;
         this.detailsService = detailsService;
     }
