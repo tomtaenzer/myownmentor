@@ -5,6 +5,7 @@ import {getDecodedJWTToken, isJWTTokenValid} from "./utils/jwt-utils";
 import Container from "@material-ui/core/Container/Container";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {UserDispatchContext} from "./user/UserContext";
+import {LandingPage} from "./pages/LandingPage";
 
 
 
@@ -22,8 +23,11 @@ function Navigation() {
 
         <Container maxWidth={'md'} component="main">
           <Switch>
-            <Route>
+            <Route path={"/login"}>
               <LoginPage />
+            </Route>
+            <Route path={"/"}>
+              <LandingPage />
             </Route>
           </Switch>
         </Container>
@@ -40,7 +44,7 @@ function App() {
 
   return (
   <UserContextProvider>
-    <Navigation />
+   <Navigation />
   </UserContextProvider>
   );
 }

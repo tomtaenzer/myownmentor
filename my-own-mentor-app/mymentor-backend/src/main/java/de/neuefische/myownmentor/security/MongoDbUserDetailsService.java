@@ -1,7 +1,7 @@
 package de.neuefische.myownmentor.security;
 
 import de.neuefische.myownmentor.db.UserDb;
-import de.neuefische.myownmentor.model.MentorUser;
+import de.neuefische.myownmentor.model.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,12 +25,12 @@ public class MongoDbUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<MentorUser> optionalUser = userDb.findById(username);
+        Optional<AppUser> optionalUser = userDb.findById(username);
         if (optionalUser.isEmpty()) {
             throw new UsernameNotFoundException("user with username: \"" + username + "\" not found");
         }
 
-        MentorUser mentorUser = optionalUser.get();
+        AppUser mentorUser = optionalUser.get();
 
         return new User(mentorUser.getUsername(), mentorUser.getPassword(), List.of(new SimpleGrantedAuthority("admin")));
     }

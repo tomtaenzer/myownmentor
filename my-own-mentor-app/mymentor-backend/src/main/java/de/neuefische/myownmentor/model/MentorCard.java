@@ -3,19 +3,18 @@ package de.neuefische.myownmentor.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+@AllArgsConstructor
+public class MentorCard {
 
+    @Id
     private String id;
-    private String name;
+    private String firstName;
     private String lastName;
     private String university;
-  /*  private int payment;
-    private String subject;
-    private String Description;
-    */
+    private String description;
 
 }
