@@ -13,16 +13,16 @@ import java.util.List;
 @RequestMapping("api/students")
 public class StudentController {
 
-    private final StudentService StudService;
+    private final StudentService studService;
 
     @Autowired
     public StudentController(StudentService StudService){
-        this.StudService = StudService;
+        this.studService = StudService;
     }
 
     @GetMapping
     public List<Student>getAllStudents(){
-        return StudService.getStudents();
+        return studService.getStudents();
     }
 
 
