@@ -30,3 +30,7 @@ export function getDecodedJwtToken(){
     console.log(decodedToken);
     return decodedToken;
 }
+
+export function performLogin(){
+    //toDo
+}

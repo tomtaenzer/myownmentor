@@ -32,7 +32,7 @@ export function putAStudent(name, lastname, university, subject, price) {
     });
 }
 
-export function deleteIdea(id) {
+export function deleteAStudent(id) {
     const token = getJWTToken();
     return fetch(`/api/students/${id}`, {
         method: 'DELETE',
@@ -42,7 +42,7 @@ export function deleteIdea(id) {
     });
 }
 
-export async function fetchIdea(id) {
+export async function fetchAStudent(id) {
     const token = getJWTToken();
     const response = await fetch(`/api/students/${id}`, {
         method: 'GET',
