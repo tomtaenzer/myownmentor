@@ -1,23 +1,26 @@
-import React from 'react';
-
+import React, {useEffect, useState} from 'react';
+import {fetchAllMentorCards} from "../utils/mentor-utils";
 
 
 export default function MentorCard(){
 
-    async function fetchAllStudents() {
+    const [mentorCards, setMentorCards] = useState([]);
 
-        const response = await fetch('/api/mentorCards', {
-            method: 'Get'
+    useEffect(() => {
+        fetchAllMentorCards()
+            .then(data => setMentorCards(data));
+    },[])
+        console.log(mentorCards);
+    return (
 
+        <div>
+            <ul>
+                {
+                    mentorCards.map(mentorCard => <li key={mentorCard.id}>{mentorCard.firstName}</li>)
+                }
+            </ul>
+        </div>
 
-        });
-        if (response.status !==200) {
-            throw new  Error(response.statusText);
-        }
-        console.log(response);
-        return await response.json();
-    }
-        fetchAllStudents();
-        return <div></div>
+    )
 
 }
