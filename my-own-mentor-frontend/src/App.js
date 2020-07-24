@@ -5,7 +5,7 @@ import {getDecodedJWTToken, isJWTTokenValid} from "./utils/jwt-utils";
 import Container from "@material-ui/core/Container/Container";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {UserDispatchContext} from "./user/UserContext";
-import {LandingPage} from "./pages/LandingPage";
+import LandingPage from "./pages/LandingPage";
 import MentorAppBar from "./components/MentorAppBar";
 
 
