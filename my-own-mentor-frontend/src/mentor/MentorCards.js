@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {fetchAllMentorCards} from "../utils/mentor-utils";
 
 
-export default function MentorCard(){
+export default function MentorCards({imageURl, name, university}){
 
     const [mentorCards, setMentorCards] = useState([]);
 

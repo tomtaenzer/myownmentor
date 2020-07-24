@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from "./MenuIcon";
+import Paper from "@material-ui/core/Paper";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
-    },
+    }
 }));
-
 export default function MentorAppBar() {
-    const classes = useStyles();
+   const classes = useStyles();
+    /* console.log(classes)*/
 
     return (
         <div className={classes.root}>
@@ -35,6 +36,7 @@ export default function MentorAppBar() {
                     <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
+
         </div>
     );
 }
