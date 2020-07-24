@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {fetchAllMentorCards} from "../utils/mentor-utils";
+import MentorSingleCard from "./MentorSingleCard";
 
 
 export default function MentorCards({imageURl, name, university}){
@@ -16,7 +17,7 @@ export default function MentorCards({imageURl, name, university}){
         <div>
             <ul>
                 {
-                    mentorCards.map(mentorCard => <li key={mentorCard.id}>{mentorCard.firstName}</li>)
+                    mentorCards.map(mentorCard => <MentorSingleCard key={mentorCard.id} firstName={mentorCard.firstname} lastName={mentorCard.lastName } university={mentorCard.university} description={mentorCard.description}></MentorSingleCard>)
                 }
             </ul>
         </div>
