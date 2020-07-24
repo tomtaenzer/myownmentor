@@ -6,6 +6,7 @@ import Container from "@material-ui/core/Container/Container";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {UserDispatchContext} from "./user/UserContext";
 import {LandingPage} from "./pages/LandingPage";
+import MentorAppBar from "./components/MentorAppBar";
 
 
 
@@ -20,7 +21,7 @@ function Navigation() {
 
   return (
       <BrowserRouter>
-
+        <MentorAppBar />
         <Container maxWidth={'md'} component="main">
           <Switch>
             <Route path={"/login"}>
