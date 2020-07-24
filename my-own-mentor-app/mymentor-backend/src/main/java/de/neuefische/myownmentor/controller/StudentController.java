@@ -1,7 +1,7 @@
 package de.neuefische.myownmentor.controller;
 
-import de.neuefische.myownmentor.model.Student;
-import de.neuefische.myownmentor.service.StudentService;
+import de.neuefische.myownmentor.model.MentorCard;
+import de.neuefische.myownmentor.service.MentorCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/students")
+@RequestMapping("api/mentorCards")
 public class StudentController {
 
-    private final StudentService studService;
+    private final MentorCardService mentorCardService;
 
     @Autowired
-    public StudentController(StudentService StudService){
-        this.studService = StudService;
+    public StudentController(MentorCardService mentorCardService){
+        this.mentorCardService = mentorCardService;
     }
 
     @GetMapping
-    public List<Student>getAllStudents(){
-        return studService.getStudents();
+    public List<MentorCard>getALLMentorCads(){
+        return mentorCardService.getAllMentorCards();
     }
 
 

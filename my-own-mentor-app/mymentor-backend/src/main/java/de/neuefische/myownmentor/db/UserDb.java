@@ -1,7 +1,7 @@
 package de.neuefische.myownmentor.db;
 
-import de.neuefische.myownmentor.model.MentorUser;
+import de.neuefische.myownmentor.model.AppUser;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface UserDb extends PagingAndSortingRepository<MentorUser,String> {
+public interface UserDb extends PagingAndSortingRepository<AppUser,String> {
 }
