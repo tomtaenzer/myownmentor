@@ -10,20 +10,34 @@ import MentorAppBar from "./components/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import RegisterPage from "./pages/RegisterPage";
 import LogoutPage from "./pages/LogoutPage";
+import MyMentorTheme from "./theme/MyMentorTheme";
+import {ThemeProvider} from "@material-ui/core";
+
 
 const useStyles = makeStyles( () => ({
 
     image:{
-        backgroundImage: 'url(https://cdn.pixabay.com/photo/2018/05/19/00/53/online-3412473_1280.jpg)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backGroundPosition: "center",
         minHeight: '100vh',
 
+    },
+    mainWrapper: {
+        height: "100vh",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-start",
+
+
     }
+
+
 }));
 
 function Navigation() {
+    const classes = useStyles();
   const dispatch = useContext(UserDispatchContext);
 
   useEffect(() => {
@@ -34,8 +48,8 @@ function Navigation() {
 
   return (
       <BrowserRouter>
-        <MentorAppBar />
-        <Container maxWidth={'md'} component="main">
+
+        <Container maxWidth={'md'} component="main" className={classes.mainWrapper}>
           <Switch>
             <Route path={"/login"}>
               <LoginPage />
@@ -51,6 +65,7 @@ function Navigation() {
               </Route>
           </Switch>
         </Container>
+          <MentorAppBar />
       </BrowserRouter>
   );
 }
@@ -65,11 +80,13 @@ function App() {
     const classes = useStyles();
 
   return (
+      <ThemeProvider theme={MyMentorTheme}>
   <UserContextProvider>
       <div className={classes.image}>
    <Navigation />
       </div>
   </UserContextProvider>
+      </ThemeProvider>
   );
 }
 
