@@ -15,6 +15,9 @@ public class MentorCard {
     private String firstName;
     private String lastName;
     private String university;
+    private String subject;
     private String description;
+    private String pricing;
+    private String email;
 
 }
