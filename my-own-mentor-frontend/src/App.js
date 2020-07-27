@@ -8,6 +8,8 @@ import {UserDispatchContext} from "./user/UserContext";
 import LandingPage from "./pages/LandingPage";
 import MentorAppBar from "./components/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import RegisterPage from "./pages/RegisterPage";
+import LogoutPage from "./pages/LogoutPage";
 
 const useStyles = makeStyles( () => ({
 
@@ -16,7 +18,7 @@ const useStyles = makeStyles( () => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backGroundPosition: "center",
-        minHeight: '72vh',
+        minHeight: '100vh',
 
     }
 }));
@@ -38,9 +40,15 @@ function Navigation() {
             <Route path={"/login"}>
               <LoginPage />
             </Route>
-            <Route path={"/"}>
+            <Route path={"/landingpage"}>
               <LandingPage />
             </Route>
+              <Route path={"/registerpage"}>
+                  <RegisterPage />
+              </Route>
+              <Route path={"/logourtpage"}>
+                  <LogoutPage />
+              </Route>
           </Switch>
         </Container>
       </BrowserRouter>
@@ -60,7 +68,7 @@ function App() {
   <UserContextProvider>
       <div className={classes.image}>
    <Navigation />
-      </div>div>
+      </div>
   </UserContextProvider>
   );
 }

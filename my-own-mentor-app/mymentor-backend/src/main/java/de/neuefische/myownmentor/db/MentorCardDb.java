@@ -10,8 +10,8 @@ import java.util.List;
 public class MentorCardDb {
 
     private final List<MentorCard> mentorCards = new ArrayList<>(
-            List.of(new MentorCard("01", "Tom", "Tänzer", "Cologne", "bla"),
-            new MentorCard( "02", "Nina", "Nonnenmacher", "Bielefeld", "blabla)")));
+            List.of(new MentorCard("01", "Tom", "Tänzer", "Cologne", "Infromatics", "bla", "30", "tt@gmx"),
+            new MentorCard( "02", "Nina", "Nonnenmacher", "Bielefeld", "politics", "blabla", "40", "nn@amazon")));
 
     public List <MentorCard> getMentorCards(){
         return mentorCards;
