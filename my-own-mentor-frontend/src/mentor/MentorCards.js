@@ -1,13 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import {fetchAllMentorCards} from "../utils/mentor-utils";
 import MentorSingleCard from "./MentorSingleCard";
+
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
+const useStyles = makeStyles( {
 
+    wrapper: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        flexWrap: "wrap"
+    }
+
+})
 
 
 export default function MentorCards({imageURl, name, university}){
-
+    const classes = useStyles();
     const [mentorCards, setMentorCards] = useState([]);
 
     useEffect(() => {
@@ -17,12 +27,12 @@ export default function MentorCards({imageURl, name, university}){
         console.log(mentorCards);
     return (
 
-        <div>
-            <ul>
+        <div className={classes.wrapper}>
+
                 {
                     mentorCards.map(mentorCard => <MentorSingleCard key={mentorCard.id} firstName={mentorCard.firstname} lastName={mentorCard.lastName } university={mentorCard.university} description={mentorCard.description}></MentorSingleCard>)
                 }
-            </ul>
+
         </div>
 
     )

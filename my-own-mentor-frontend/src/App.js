@@ -12,12 +12,13 @@ import RegisterPage from "./pages/RegisterPage";
 import LogoutPage from "./pages/LogoutPage";
 import MyMentorTheme from "./theme/MyMentorTheme";
 import {ThemeProvider} from "@material-ui/core";
+import Header from "./components/Header";
 
 
 const useStyles = makeStyles( () => ({
 
     image:{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1557425493-6f90ae4659fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backGroundPosition: "center",
@@ -48,7 +49,7 @@ function Navigation() {
 
   return (
       <BrowserRouter>
-
+        <Header />
         <Container maxWidth={'md'} component="main" className={classes.mainWrapper}>
           <Switch>
             <Route path={"/login"}>
