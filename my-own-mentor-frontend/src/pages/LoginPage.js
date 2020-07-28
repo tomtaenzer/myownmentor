@@ -16,7 +16,10 @@ import {UserDispatchContext, UserStateContext} from "../user/UserContext";
 const useStyles = makeStyles((theme) => ({
     gridContainer: {
         paddingTop: theme.spacing(4),
+        backgroundColor: "transparent",
+
     },
+
 }));
 
 function LoginPage() {

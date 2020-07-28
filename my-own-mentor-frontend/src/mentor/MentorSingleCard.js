@@ -52,7 +52,7 @@ export default function MentorSingleCard({ firstName, lastName, university, subj
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
+                        {firstName}
                     </Avatar>
                 }
                 action={
