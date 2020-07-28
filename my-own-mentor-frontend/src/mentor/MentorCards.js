@@ -30,7 +30,7 @@ export default function MentorCards({imageURl, name, university}){
         <div className={classes.wrapper}>
 
                 {
-                    mentorCards.map(mentorCard => <MentorSingleCard key={mentorCard.id} firstName={mentorCard.firstname} lastName={mentorCard.lastName } university={mentorCard.university} description={mentorCard.description}></MentorSingleCard>)
+                    mentorCards.map(mentorCard => <MentorSingleCard key={mentorCard.id} firstName={mentorCard.firstName} lastName={mentorCard.lastName } university={mentorCard.university} description={mentorCard.description}></MentorSingleCard>)
                 }
 
         </div>

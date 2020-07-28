@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -11,20 +9,29 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import logo from "../ContentImages/LogoAppBar.png";
+import AppBar from "@material-ui/core/AppBar";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        marginRight: theme.spacing(1),
     },
     title: {
         flexGrow: 1,
     },
+    transparent: {
+        background: "transparent"
+    },
+    appBarImage: {
+        width: "250px"
+    }
+
 }));
 
-export default function MenuAppBar() {
+export default function Header() {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -50,14 +57,14 @@ export default function MenuAppBar() {
                     label={auth ? 'Logout' : 'Login'}
                 />
             </FormGroup>
-
+            <AppBar position="static" className={classes.transparent}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                       MOM
-                    </Typography>
+                    <div className="logo" >
+                        <img src={logo} width="40%" height="40%" />
+                    </div>
                     {auth && (
                         <div>
                             <IconButton
@@ -90,7 +97,7 @@ export default function MenuAppBar() {
                         </div>
                     )}
                 </Toolbar>
-
+            </AppBar>
         </div>
     );
 }

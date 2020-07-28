@@ -60,7 +60,7 @@ export default function MentorAppBarMenu() {
                 color="primary"
                 onClick={handleClick}
             >
-                Open Menu
+                 Menu
             </Button>
             <StyledMenu
                 id="customized-menu"
