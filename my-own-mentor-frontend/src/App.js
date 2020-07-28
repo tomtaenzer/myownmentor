@@ -25,14 +25,11 @@ const useStyles = makeStyles( () => ({
         minHeight: '100vh',
 
     },
-    mainWrapper: {
-        height: "100vh",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "flex-start",
-
-
-    }
+   // mainWrapper: {
+     //   minHeight: "100vh",
+      //  display: "flex",
+      //  alignItems: "flex-start",
+  //  }
 
 
 }));

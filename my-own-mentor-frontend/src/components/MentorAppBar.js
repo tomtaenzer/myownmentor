@@ -16,7 +16,8 @@ const useStyles = makeStyles({
         boxShadow:"none",
         backgroundColor: "#7399c5",
         display: "flex-start",
-        flexDirection: "row"
+        flexDirection: "row",
+
     },
 });
 
