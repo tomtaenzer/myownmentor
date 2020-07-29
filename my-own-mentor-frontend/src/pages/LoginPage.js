@@ -16,9 +16,22 @@ import {UserDispatchContext, UserStateContext} from "../user/UserContext";
 const useStyles = makeStyles((theme) => ({
     gridContainer: {
         paddingTop: theme.spacing(4),
-        backgroundColor: "transparent",
+        backgroundColor: "#7399c5",
+        opacity: "0.75",
+        marginTop: "200px"
 
     },
+
+    loginPerform: {
+        margin: "10px",
+        color: "white"
+    },
+    textStyle: {
+        color: "white"
+    },
+    authBox: {
+        marginTop: "10px"
+    }
 
 }));
 
@@ -56,23 +69,32 @@ function LoginPage() {
             justify="center"
         >
             <Grid item>
-                <div>
+                <div className={classes.authBox}>
                     <TextField
+                        required
+                        id="outlined-required"
                         label="Username"
-                        type="text"
-                        value={username}
+                        defaultValue="Password"
+                        variant="outlined"
+                        type="password"
+                        value={password}
                         onChange={(event) => setUsername(event.target.value)}
                     />
                 </div>
-                <div>
+
+                <div className={classes.authBox}>
                     <TextField
+                        required
+                        id="outlined-required"
                         label="Password"
+                        defaultValue="Password"
+                        variant="outlined"
                         type="password"
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
-                <Button onClick={login}>Login</Button>
+                <Button className={classes.loginPerform} onClick={login}>Login</Button>
             </Grid>
         </Grid>
     );
