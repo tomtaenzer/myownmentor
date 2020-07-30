@@ -9,10 +9,10 @@ import LandingPage from "./pages/LandingPage";
 import MentorAppBar from "./components/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import RegisterPage from "./pages/RegisterPage";
-import LogoutPage from "./pages/LogoutPage";
 import MyMentorTheme from "./theme/MyMentorTheme";
 import {ThemeProvider} from "@material-ui/core";
 import Header from "./components/Header";
+import PrivateRoute from "./pages/PrivateRoute";
 
 
 const useStyles = makeStyles( () => ({
@@ -49,18 +49,12 @@ function Navigation() {
         <Header />
         <Container maxWidth={'md'} component="main" className={classes.mainWrapper}>
           <Switch>
-            <Route path={"/login"}>
-              <LoginPage />
-            </Route>
-            <Route path={"/landingpage"}>
-              <LandingPage />
-            </Route>
-              <Route path={"/registerpage"}>
-                  <RegisterPage />
-              </Route>
-              <Route path={"/logourtpage"}>
-                  <LogoutPage />
-              </Route>
+            <Route path="/login" component={LoginPage} exact/>
+            <Route path="/register" component={RegisterPage} exact/>
+            <PrivateRoute path="/" component={LandingPage} exact/>
+            <PrivateRoute path="/profile" component={LandingPage} exact/>
+            <Route path="/mentordashboard" component={LandingPage} exact/>
+
           </Switch>
         </Container>
           <MentorAppBar />

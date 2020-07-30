@@ -13,7 +13,7 @@ const initialState = {
 function reducer(state, action) {
     switch (action.type) {
         case LOGIN:
-            return {...state, authstatus: 'Pending'};
+            return {...state, authStatus: 'Pending'};
         case LOGIN_SUCCESS:
             return {
                 ...state,

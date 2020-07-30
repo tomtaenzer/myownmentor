@@ -12,6 +12,7 @@ import { Redirect } from 'react-router-dom';
 import { getDecodedJWTToken, setJWTToken } from '../utils/jwt-utils';
 import { Grid, makeStyles } from '@material-ui/core';
 import {UserDispatchContext, UserStateContext} from "../user/UserContext";
+import logo from "../ContentImages/LogoAppBar.png";
 
 const useStyles = makeStyles((theme) => ({
     gridContainer: {
@@ -69,15 +70,16 @@ function LoginPage() {
             justify="center"
         >
             <Grid item>
+                <div><img src={logo} width="25%"/></div>
                 <div className={classes.authBox}>
                     <TextField
                         required
                         id="outlined-required"
                         label="Username"
-                        defaultValue="Password"
+                        defaultValue="Username"
                         variant="outlined"
-                        type="password"
-                        value={password}
+                        type="Username"
+                        value={username}
                         onChange={(event) => setUsername(event.target.value)}
                     />
                 </div>
