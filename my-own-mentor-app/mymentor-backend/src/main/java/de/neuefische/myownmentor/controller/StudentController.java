@@ -1,6 +1,6 @@
 package de.neuefische.myownmentor.controller;
 
-import de.neuefische.myownmentor.model.MentorCard;
+import de.neuefische.myownmentor.model.MentorCardUser;
 import de.neuefische.myownmentor.service.MentorCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<MentorCard>getALLMentorCads(){
+    public List<MentorCardUser>getALLMentorCads(){
         return mentorCardService.getAllMentorCards();
     }
 

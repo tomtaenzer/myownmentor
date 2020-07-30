@@ -9,7 +9,6 @@ import LandingPage from "./pages/LandingPage";
 import MentorAppBar from "./components/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import RegisterPage from "./pages/RegisterPage";
-
 import MyMentorTheme from "./theme/MyMentorTheme";
 import {ThemeProvider} from "@material-ui/core";
 import Header from "./components/Header";
@@ -52,7 +51,7 @@ function Navigation() {
           <Switch>
             <Route path="/login" component={LoginPage} exact/>
             <Route path="/register" component={RegisterPage} exact/>
-            <PrivateRoute path="/landingpage" component={LandingPage} exact/>
+            <PrivateRoute path="/" component={LandingPage} exact/>
             <PrivateRoute path="/profile" component={LandingPage} exact/>
             <Route path="/mentordashboard" component={LandingPage} exact/>
 

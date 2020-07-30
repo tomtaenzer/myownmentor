@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from "react";
 import {removeJWTToken} from "../utils/auth-utils";
-import Redirect from "react-router-dom/es/Redirect";
+import {Redirect, Route} from "react-router-dom";
 import {UserDispatchContext, UserStateContext} from "../user/UserContext";
 import {LOGOUT} from "../user/UserContextProvider";
-import Route from "react-router-dom/es/Route";
+
 
 
 export default function PrivateRoute({component: Component, ...rest}) {
