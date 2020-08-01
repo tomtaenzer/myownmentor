@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "10px"
     }
 
-}));
+gi}));
 
 function LoginPage() {
     const [username, setUsername] = useState('');
