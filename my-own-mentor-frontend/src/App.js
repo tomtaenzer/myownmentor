@@ -1,11 +1,11 @@
 import React, {useContext, useEffect} from 'react';
 import UserContextProvider, {LOGIN_SUCCESS} from "./user/UserContextProvider";
-import LoginPage from "./pages/LoginPage";
+import UserLoginPage from "./pages/UserLoginPage";
 import {getDecodedJWTToken, isJWTTokenValid} from "./utils/jwt-utils";
 import Container from "@material-ui/core/Container/Container";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {UserDispatchContext} from "./user/UserContext";
-import LandingPage from "./pages/LandingPage";
+import MentorCardsPage from "./pages/MentorCardsPage";
 import MentorAppBar from "./components/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import RegisterPage from "./pages/RegisterPage";
@@ -49,11 +49,11 @@ function Navigation() {
         <Header />
         <Container maxWidth={'md'} component="main" className={classes.mainWrapper}>
           <Switch>
-            <Route path="/login" component={LoginPage} exact/>
+            <Route path="/userlogin" component={UserLoginPage} exact/>
             <Route path="/register" component={RegisterPage} exact/>
-            <PrivateRoute path="/" component={LandingPage} exact/>
-            <PrivateRoute path="/profile" component={LandingPage} exact/>
-            <Route path="/mentordashboard" component={LandingPage} exact/>
+            <PrivateRoute path="/cardsdashboard" component={MentorCardsPage} exact/>
+            <PrivateRoute path="/profile" component={MentorCardsPage} exact/>
+            <Route path="/mentordashboard" component={MentorCardsPage} exact/>
 
           </Switch>
         </Container>
