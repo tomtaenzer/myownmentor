@@ -59,3 +59,17 @@ export async function performRegistration(registrationData) {
     }
     return await response.text();
 }
+
+export async function performMentorRegistration(registrationData) {
+    const response = await fetch ('/auth/mentorregister', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(registrationData),
+    });
+    if (response.status !== 200) {
+        throw new Error (`Registration failed: ${response.statusText}`);
+    }
+    return await response.text();
+}

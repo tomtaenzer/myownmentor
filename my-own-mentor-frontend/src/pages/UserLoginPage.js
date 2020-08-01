@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function LoginPage() {
+function UserLoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -59,7 +59,7 @@ function LoginPage() {
 
     const { authStatus } = useContext(UserStateContext);
     if (authStatus === 'SUCCESS') {
-        return <Redirect to={'/'} />;
+        return <Redirect to={'/cardsdashboard'} />;
     }
 
     return (
@@ -102,4 +102,4 @@ function LoginPage() {
     );
 }
 
-export default LoginPage;
+export default UserLoginPage;
