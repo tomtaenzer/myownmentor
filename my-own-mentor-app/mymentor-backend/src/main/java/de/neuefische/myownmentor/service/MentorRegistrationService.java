@@ -24,7 +24,7 @@ public class MentorRegistrationService {
         this.jwtUtils = jwtUtils;
     }
 
-    public Mentor register (MentorRegisterDto data){
+    public Mentor register (Mentor data){
         Mentor mentor = new Mentor();
         mentor.setMentorUserName(data.getMentorUserName());
         String encodedPw = encoder.encode(data.getPassword());

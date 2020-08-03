@@ -12,9 +12,9 @@ public class AppUserDto {
             @Size(min = 5, message = "user mind length 5")
         */
         private String username;
+        private String firstName;
+        private String lastName;
         private String password;
-        private String firstname;
-        private String lastname;
         private String email;
     }
 

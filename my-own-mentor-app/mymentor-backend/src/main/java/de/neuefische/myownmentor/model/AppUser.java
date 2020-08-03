@@ -18,4 +18,7 @@ public class AppUser {
     private String eMail;
     private String password;
     private boolean isMentor;
+
+    public AppUser(String username, String email, String firstName, String lastName, String password) {
+    }
 }
