@@ -17,7 +17,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MentorCards from "../mentor/MentorCards";
-import logo from "../ContentImages/MyOwnMentorLogo.png";
+import logo from "../ContentImages/Weiß und blau Maus Computer Logo (2).png";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
+        backgroundColor: "grey"
     },
     content: {
         flexGrow: 1,
@@ -80,7 +81,7 @@ export default function MentorUserDrawer(props) {
     const drawer = (
         <div>
             <div className={classes.toolbar} />
-            <img src={logo} width="25%"/>
+
             <Divider />
             <List>
                 {['Mentorcards', 'Contact Mentor'].map((text, index) => (

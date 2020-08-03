@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MentorCardUser {
+public class MentorCardUser_P {
 
     @Id
     private String id;

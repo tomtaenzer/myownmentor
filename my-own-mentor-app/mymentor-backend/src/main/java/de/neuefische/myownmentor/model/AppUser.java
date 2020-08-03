@@ -13,6 +13,9 @@ public class AppUser {
 
     @Id
     private String username;
+    private String firstName;
+    private String lastName;
+    private String eMail;
     private String password;
     private boolean isMentor;
 }
