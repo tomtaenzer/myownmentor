@@ -5,9 +5,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(collection = "MentorUser")
 public class AppUser {
 
@@ -19,6 +19,4 @@ public class AppUser {
     private String password;
     private boolean isMentor;
 
-    public AppUser(String username, String email, String firstName, String lastName, String password) {
-    }
 }

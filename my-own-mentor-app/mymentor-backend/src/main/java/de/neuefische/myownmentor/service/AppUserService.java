@@ -2,7 +2,6 @@ package de.neuefische.myownmentor.service;
 
 import de.neuefische.myownmentor.db.AppUserDb;
 import de.neuefische.myownmentor.model.AppUser;
-import de.neuefische.myownmentor.model.dto.AppUserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -29,10 +28,11 @@ public class AppUserService {
         newUserData.setFirstName(newUserData.getFirstName());
         newUserData.setLastName(newUserData.getLastName());
         newUserData.setPassword(passwordEncoder.encode(newUserData.getPassword()));
+        newUserData.setMentor(newUserData.isMentor());
         appUserDb.save(newUserData);
     }
 
     public Optional<AppUser>getUserByUserName(String userName){
-        return appUserDb.findUserByName(userName);
+        return appUserDb.findById(userName);
     }
 }

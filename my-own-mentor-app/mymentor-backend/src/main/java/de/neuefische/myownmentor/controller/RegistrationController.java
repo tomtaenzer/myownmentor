@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -23,9 +24,9 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public AppUser registration(@RequestBody AppUserDto data){
+    public AppUser registration(@RequestBody @Valid AppUserDto data){
         String userNameData = data.getUsername();
-        AppUser newAppUser = new AppUser(data.getUsername(), data.getEmail(), data.getFirstName(), data.getLastName(), data.getPassword());
+        AppUser newAppUser = new AppUser(data.getUsername(), data.getFirstName(), data.getLastName(),data.getEmail(), data.getPassword(), data.isMentor());
         Optional<AppUser>optionalAppUser = appUserService.getUserByUserName(userNameData);
         if(optionalAppUser.isEmpty()) {
         appUserService.saveNewAppUser(newAppUser);

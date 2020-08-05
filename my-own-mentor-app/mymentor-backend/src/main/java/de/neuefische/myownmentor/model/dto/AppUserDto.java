@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Size;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +16,10 @@ public class AppUserDto {
         private String username;
         private String firstName;
         private String lastName;
-        private String password;
         private String email;
+        @Size(min = 5, message = "user mind length 5")
+        private String password;
+        private boolean mentor;
+
     }
 
