@@ -1,6 +1,6 @@
 package de.neuefische.myownmentor.security;
 
-import de.neuefische.myownmentor.db.UserDb;
+import de.neuefische.myownmentor.db.AppUserDb;
 import de.neuefische.myownmentor.model.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,10 +16,10 @@ import java.util.Optional;
 @Service
 public class MongoDbUserDetailsService implements UserDetailsService {
 
-    private final UserDb userDb;
+    private final AppUserDb userDb;
 
     @Autowired
-    public MongoDbUserDetailsService(UserDb userDb) {
+    public MongoDbUserDetailsService(AppUserDb userDb) {
         this.userDb = userDb;
     }
 

@@ -14,7 +14,6 @@ public class Mentor {
 
     @Id
     private String mentorUserName;
-    private String password;
     private String mentorName;
     private String mentorLastName;
     private String university;

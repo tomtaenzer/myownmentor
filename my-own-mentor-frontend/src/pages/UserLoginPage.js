@@ -12,27 +12,45 @@ import { Redirect } from 'react-router-dom';
 import { getDecodedJWTToken, setJWTToken } from '../utils/jwt-utils';
 import { Grid, makeStyles } from '@material-ui/core';
 import {UserDispatchContext, UserStateContext} from "../user/UserContext";
-import logo from "../ContentImages/LogoAppBar.png";
+import logo from "../ContentImages/Weiß und blau Maus Computer Logo (2).png";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     gridContainer: {
         paddingTop: theme.spacing(4),
         backgroundColor: "#7399c5",
         opacity: "0.75",
-        marginTop: "200px"
+        marginTop: "100px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignContent: "center"
+    },
+
+    itemContainer: {
+        marginBottom: "10px",
+        marginRight: "20px",
+        marginLeft: "20px",
+        color: "white",
+        maxWidth: "400px"
 
     },
 
     loginPerform: {
-        margin: "10px",
-        color: "white"
+
+
     },
     textStyle: {
         color: "white"
     },
     authBox: {
-        marginTop: "10px"
+        marginTop: "10px",
+        marginLeft: "10px",
+        marginRight: "10px"
+
     }
+
+
 
 }));
 
@@ -63,16 +81,12 @@ function UserLoginPage() {
     }
 
     return (
-        <Grid
+
+        <Box
             className={classes.gridContainer}
-            container
-            alignContent="center"
-            justify="center"
         >
-            <Grid item>
-                <div><img src={logo} width="25%"/></div>
-                <div className={classes.authBox}>
-                    <TextField
+             <img className={classes.itemContainer} src={logo} width="50%"/>
+            <TextField className={classes.itemContainer}
                         required
                         id="outlined-required"
                         label="Username"
@@ -82,10 +96,11 @@ function UserLoginPage() {
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                     />
-                </div>
 
-                <div className={classes.authBox}>
-                    <TextField
+
+
+                    <TextField className={classes.itemContainer}
+
                         required
                         id="outlined-required"
                         label="Password"
@@ -95,10 +110,12 @@ function UserLoginPage() {
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                     />
-                </div>
-                <Button className={classes.loginPerform} onClick={login}>Login</Button>
-            </Grid>
-        </Grid>
+
+                <Button className={classes.itemContainer} onClick={login}>Login</Button>
+               <Button className={classes.itemContainer} onClick={login}>Register</Button>
+
+
+        </Box>
     );
 }
 
