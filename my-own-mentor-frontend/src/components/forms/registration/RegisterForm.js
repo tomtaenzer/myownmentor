@@ -12,6 +12,8 @@ import PopUpFailedRegistration from "../../popups/PopUpFailedRegistration";
 import {UserDispatchContext, UserStateContext} from "../../../user/UserContext";
 import {useFormik} from "formik";
 import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
     registrationBox: {
@@ -44,12 +46,15 @@ export default function RegistrationForm() {
 
     const formik = useFormik({
         initialValues: {
-            name: '',
-            lastname: '',
+            firstName: '',
+            lastName: '',
             username: '',
             email: '',
             password: '',
             confirmpassword: ''
+        },
+        onSubmit: values => {
+            register(values)
         }
     })
 
@@ -66,22 +71,21 @@ export default function RegistrationForm() {
     }
 
     return (
-        <Box className={classes.registrationBox}>
+        <Box>
             <Box>
                 <Typography variant="h4" color="primary" align="center">
                     Registrierung
                 </Typography>
             </Box>
-            <Box className={classes.logoPlacement}>
-                <img src={helloLogo} alt="Lunchbreak logo for registration" className={classes.logo}/>
+            <Box>
             </Box>
             <Box>
-                <form>
+                <form onSubmit={formik.handleSubmit}>
                     <label htmlFor='name'>Name</label>
                     <input
                         type='text'
-                        id='name'
-                        name='name'
+                        id='firstName'
+                        name='firstName'
                         onChange={formik.handleChange}
                         value={formik.values.name}
                     />
@@ -89,8 +93,8 @@ export default function RegistrationForm() {
                     <label htmlFor='lastname'>Lastname</label>
                     <input
                         type='text'
-                        id='lastname'
-                        name='lastname'
+                        id='lastName'
+                        name='lastName'
                         onChange={formik.handleChange}
                         value={formik.values.lastname}
                     />
@@ -131,7 +135,7 @@ export default function RegistrationForm() {
                         value={formik.values.confirmpassword}
                     />
 
-                    <Button>Submit</Button>
+                    <Button type='submit'>Submit</Button>
                 </form>
             </Box>
 
