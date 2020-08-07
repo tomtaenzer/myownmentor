@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container/Container";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {UserDispatchContext} from "./user/UserContext";
 import MentorCardsPage from "./pages/MentorCardsPage";
-import MentorAppBar from "./components/MentorAppBar";
+import MentorAppBar from "./components/navigation/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import RegisterPage from "./pages/RegisterPage";
 import MyMentorTheme from "./theme/MyMentorTheme";

@@ -1,6 +1,6 @@
 import React from "react";
 import MentorCards from "../mentor/MentorCards";
-import MentorUserDrawer from "../components/MentorUserDrawer";
+import MentorUserDrawer from "../components/navigation/MentorUserDrawer";
 import PlaceHolder from "../components/PlaceHolder";
 import {makeStyles} from "@material-ui/core/styles";
 
