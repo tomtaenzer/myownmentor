@@ -9,7 +9,7 @@ import MentorCardsPage from "./pages/MentorCardsPage";
 import MentorAppBar from "./components/navigation/MentorAppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import RegisterPage from "./pages/RegisterPage";
-import MyMentorTheme from "./theme/MyMentorTheme";
+import myMentorTheme from "./theme/myMentorTheme";
 import {ThemeProvider} from "@material-ui/core";
 import Header from "./components/Header";
 import PrivateRoute from "./pages/PrivateRoute";
@@ -72,7 +72,7 @@ function App() {
     const classes = useStyles();
 
   return (
-      <ThemeProvider theme={MyMentorTheme}>
+      <ThemeProvider theme={myMentorTheme}>
   <UserContextProvider>
       <div className={classes.image}>
    <Navigation />

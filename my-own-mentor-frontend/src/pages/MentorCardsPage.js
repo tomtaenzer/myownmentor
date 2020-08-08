@@ -9,8 +9,6 @@ const useStyles = makeStyles((theme) => ({
 
   flexContainer: {
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around"
 
   }
 
@@ -24,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
 export default function MentorCardsPage(){
  const classes = useStyles();
   return (
+
+      <div className={classes.flexContainer}>
    <MentorUserDrawer />
+      </div>
   )
 
 }

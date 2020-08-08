@@ -7,19 +7,39 @@ import {
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {performRegistration} from "../../../utils/auth-utils";
 
-import PopUpSuccessRegister from "../../popups/PopUpSuccessRegister";
-import PopUpFailedRegistration from "../../popups/PopUpFailedRegistration";
 import {UserDispatchContext, UserStateContext} from "../../../user/UserContext";
-import {useFormik} from "formik";
+import {useFormik} from 'formik';
 import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import logo from "/Users/tomherkrath/Desktop/neuefische/my-own-mentor-project/my-own-mentor/my-own-mentor-frontend/src/ContentImages/LogoAppBar.png";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const useStyles = makeStyles((theme) => ({
+
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+
     registrationBox: {
+        flexGrow: 1,
+        alignSelf: "center",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        marginTop: 15,
+        marginBottom: 15,
+        padding: 20,
+        backgroundColor: "#7399c5",
+        opacity: "0,75",
+
+
         '@media (min-width: 412px, max-width: 599px)': {
             minWidth: "400px"
         },
@@ -27,15 +47,13 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: "500px"
         }
     },
-    logo: {
-        width: '60%',
-        height: '60%'
-    },
-    logoPlacement: {
-        paddingTop: theme.spacing(3),
-        textAlign: "center"
+
+    itemContainer: {
+        alignSelf: "center"
     }
+
 }));
+
 
 export default function RegistrationForm() {
     const classes = useStyles();
@@ -46,16 +64,28 @@ export default function RegistrationForm() {
 
     const formik = useFormik({
         initialValues: {
+            username: '',
             firstName: '',
             lastName: '',
-            username: '',
             email: '',
             password: '',
-            confirmpassword: ''
+            confirmpassword: '',
+            isMentor: false
         },
         onSubmit: values => {
-            register(values)
-        }
+            register(values),
+                console.log(values)
+        },
+
+        validate: values => {
+            // values.name values.email values.channel
+            // errors.name errors.email errors.channel
+            // errors.name = 'This field is required'
+
+
+            },
+
+
     })
 
 
@@ -71,77 +101,96 @@ export default function RegistrationForm() {
     }
 
     return (
-        <Box>
-            <Box>
-                <Typography variant="h4" color="primary" align="center">
-                    Registrierung
-                </Typography>
-            </Box>
-            <Box>
-            </Box>
-            <Box>
+                <div>
+                    <Grid container className={classes.registrationBox}>
+                    <Grid item xs className={classes.itemContainer}>
+                    <img src={logo} width="50%"/>
+                    </Grid>
                 <form onSubmit={formik.handleSubmit}>
-                    <label htmlFor='name'>Name</label>
-                    <input
-                        type='text'
-                        id='firstName'
-                        name='firstName'
-                        onChange={formik.handleChange}
-                        value={formik.values.name}
-                    />
-
-                    <label htmlFor='lastname'>Lastname</label>
-                    <input
-                        type='text'
-                        id='lastName'
-                        name='lastName'
-                        onChange={formik.handleChange}
-                        value={formik.values.lastname}
-                    />
-
-                    <label htmlFor='username'>Username</label>
-                    <input
-                        type='text'
-                        id='username'
+                    <Grid item xs style={{padding: 10, marginTop: 10, marginBottom: 10, alignSelf: 'center'}}>
+                        <TextField
+                        required
+                        id='outlined required'
+                        label='UserName'
+                        defaultValue="username"
+                        variant='outlined'
+                        type="text"
                         name='username'
                         onChange={formik.handleChange}
                         value={formik.values.username}
                     />
+                    </Grid>
+                    <Grid item xs style={{padding: 5, marginTop: 10, marginBottom: 10, alignSelf: 'center'}}>
+                        <TextField
+                            required
+                            id='outlined required'
+                            label='First Name'
+                            defaultValue="firstName"
+                            variant='outlined'
+                            type="text"
+                            name="firstName"
+                            onChange={formik.handleChange}
+                            value={formik.values.firstName}
+                        />
+                    </Grid>
+                    <Grid item xs style={{padding: 5, marginTop: 10, marginBottom: 10, alignSelf: 'center'}}>
+                        <TextField
+                            required
+                            id='outlined required'
+                            label='Lastname'
+                            defaultValue="lastName"
+                            variant='outlined'
+                            type="text"
+                            name='lastName'
+                            onChange={formik.handleChange}
+                            value={formik.values.lastName}
+                        />
+                    </Grid>
+                    <Grid item xs style={{padding: 5, marginTop: 10, marginBottom: 10, alignSelf: 'center'}}>
+                        <TextField
+                            required
+                            id='outlined required'
+                            label='Email'
+                            defaultValue="email"
+                            variant='outlined'
+                            type="text"
+                            name='email'
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
+                        />
+                    </Grid>
+                    <Grid item xs style={{padding: 5, marginTop: 10, marginBottom: 10, alignSelf: 'center'}}>
+                        <TextField
+                            required
+                            id='outlined required'
+                            label='Password'
+                            defaultValue="password"
+                            variant='outlined'
+                            type="password"
+                            name="password"
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
+                        />
+                    </Grid>
+                    <Grid item xs style={{padding: 5, marginTop: 10, marginBottom: 10, alignSelf: 'center'}}>
+                        <TextField
+                            required
+                            id='outlined required'
+                            label='Confirm Password'
+                            defaultValue="confirmpassword"
+                            variant='outlined'
+                            type="password"
+                            name='confirmpassword'
+                            onChange={formik.handleChange}
+                            value={formik.values.confirmpassword}
+                        />
+                    </Grid>
 
-                    <label htmlFor='email'>Email</label>
-                    <input
-                        type='email'
-                        id='email'
-                        name='email'
-                        onChange={formik.handleChange}
-                        value={formik.values.email}
-                    />
-
-                    <label htmlFor='password'>Password</label>
-                    <input
-                        type='text'
-                        id='password'
-                        name='password'
-                        onChange={formik.handleChange}
-                        value={formik.values.password}
-                    />
-
-                    <label htmlFor='confirmpassword'>ConfirmPassword</label>
-                    <input
-                        type='text'
-                        id='confirmpassword'
-                        name='confirmpassword'
-                        onChange={formik.handleChange}
-                        value={formik.values.confirmpassword}
-                    />
-
+                    <Grid item sm>
                     <Button type='submit'>Submit</Button>
+                    </Grid>
                 </form>
-            </Box>
-
-
-            <PopUpSuccessRegister openStatus={registrationStatus === 'SUCCESS'}/>
-            <PopUpFailedRegistration openStatus={registrationStatus === 'FAILED'}/>
-        </Box>
+                </Grid>
+    </div>
     )
 }

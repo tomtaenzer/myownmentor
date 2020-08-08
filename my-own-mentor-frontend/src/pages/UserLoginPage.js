@@ -14,8 +14,16 @@ import { Grid, makeStyles } from '@material-ui/core';
 import {UserDispatchContext, UserStateContext} from "../user/UserContext";
 import logo from "../ContentImages/Weiß und blau Maus Computer Logo (2).png";
 import Box from "@material-ui/core/Box";
+import RegistrationPopUp from "../components/popups/RegistrationPopUp";
 
 const useStyles = makeStyles((theme) => ({
+
+    body: {
+        display: "flex",
+        alignContent: "center"
+
+    },
+
     gridContainer: {
         paddingTop: theme.spacing(4),
         backgroundColor: "#7399c5",
@@ -24,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignContent: "center"
+
     },
 
     itemContainer: {
@@ -36,8 +44,9 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
-    loginPerform: {
-
+    registerPopUp: {
+        display: "flex",
+        justifyContent: "center"
 
     },
     textStyle: {
@@ -112,7 +121,7 @@ function UserLoginPage() {
                     />
 
                 <Button className={classes.itemContainer} onClick={login}>Login</Button>
-               <Button className={classes.itemContainer} onClick={login}>Register</Button>
+                <Box className={classes.registerPopUp}> <RegistrationPopUp  /> </Box>
 
 
         </Box>
