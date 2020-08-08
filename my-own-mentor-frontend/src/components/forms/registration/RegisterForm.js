@@ -14,7 +14,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import logo from "/Users/tomherkrath/Desktop/neuefische/my-own-mentor-project/my-own-mentor/my-own-mentor-frontend/src/ContentImages/LogoAppBar.png";
-import Checkbox from "@material-ui/core/Checkbox";
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -73,7 +73,7 @@ export default function RegistrationForm() {
             isMentor: false
         },
         onSubmit: values => {
-            register(values),
+            register(values)
                 console.log(values)
         },
 
