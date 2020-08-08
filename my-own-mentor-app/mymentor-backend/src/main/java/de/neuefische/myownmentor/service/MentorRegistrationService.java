@@ -1,6 +1,7 @@
 package de.neuefische.myownmentor.service;
 
 import de.neuefische.myownmentor.db.MentorDb;
+import de.neuefische.myownmentor.model.AppUser;
 import de.neuefische.myownmentor.model.Mentor;
 
 
@@ -21,11 +22,17 @@ public class MentorRegistrationService {
 
     }
 
-    public Mentor register (String userName, String name, String lastName, String university, String subject, String semester,
-    String email, String pricing){
-        Mentor mentor = new Mentor(
-      userName, name, lastName, university, subject, semester, email, pricing);
-        return mentorDb.save(mentor);
+    public void registerMentor (String mentorUsername, String mentorName, String mentorLastName){
+        Mentor newMentor = new Mentor();
+        newMentor.setMentorUserName(mentorUsername);
+        newMentor.setMentorName(mentorName);
+        newMentor.setMentorLastName(mentorLastName);
+        newMentor.setEMailAddress("");
+        newMentor.setUniversity("");
+        newMentor.setSubject("");
+        newMentor.setSemester("");
+        newMentor.setPricing("");
+        mentorDb.save(newMentor);
     }
 
     public Optional <Mentor> getMentorByUserName(String userName){

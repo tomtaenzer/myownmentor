@@ -26,7 +26,8 @@ public class RegistrationController {
     @PostMapping
     public AppUser registration(@RequestBody @Valid AppUserDto data){
         String userNameData = data.getUsername();
-        AppUser newAppUser = new AppUser(data.getUsername(), data.getFirstName(), data.getLastName(),data.getEmail(), data.getPassword(), data.isMentor());
+        AppUser newAppUser = new AppUser(data.getUsername(), data.getFirstName(), data.getLastName(),data.getEmail(), data.getPassword(), false);
+
         Optional<AppUser>optionalAppUser = appUserService.getUserByUserName(userNameData);
         if(optionalAppUser.isEmpty()) {
         appUserService.saveNewAppUser(newAppUser);

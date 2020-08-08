@@ -19,7 +19,7 @@ public class AppUserDto {
         private String email;
         @Size(min = 5, message = "user mind length 5")
         private String password;
-        private boolean mentor;
+        private boolean isMentor;
 
     }
 

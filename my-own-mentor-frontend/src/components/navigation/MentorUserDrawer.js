@@ -16,15 +16,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MentorCards from "../mentor/MentorCards";
-import logo from "../ContentImages/Weiß und blau Maus Computer Logo (2).png";
+import MentorCards from "../../mentor/MentorCards";
+import logo from "../../ContentImages/Weiß und blau Maus Computer Logo (2).png";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import PortraitIcon from '@material-ui/icons/Portrait';
 import Link from "@material-ui/core/Link";
-import PrivateRoute from "../pages/PrivateRoute";
+import PrivateRoute from "../../pages/PrivateRoute";
 
 const drawerWidth = 240;
 
